@@ -1,11 +1,10 @@
 package com.example;
 
-public class Parrot {
-    private String name;
+import org.springframework.stereotype.Component;
 
-    public Parrot() {
-        System.out.println("Parrot Created");
-    }
+@Component
+public class Parrot {
+    private String name = "koko";
 
     @Override
     public String toString() {
