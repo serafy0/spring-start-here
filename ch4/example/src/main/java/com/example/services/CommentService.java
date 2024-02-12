@@ -1,14 +1,13 @@
 package com.example.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.example.models.Comment;
 import com.example.proxies.CommentNotificationProxy;
 import com.example.repositories.CommentRepo;
 
-@Component
+@Service
 public class CommentService {
 
     private CommentRepo commentRepo;
