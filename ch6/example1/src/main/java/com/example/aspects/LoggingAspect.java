@@ -1,5 +1,6 @@
 package com.example.aspects;
 
+import java.util.Arrays;
 import java.util.logging.Logger;
 
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -15,8 +16,12 @@ public class LoggingAspect {
 
     @Around("execution(* com.example.services.*.*(..))")
     public void log(ProceedingJoinPoint joinPoint) throws Throwable {
-        logger.info("Method will execute");
-        joinPoint.proceed();
-        logger.info("Method done");
+        String methodName = joinPoint.getSignature().getName();
+
+        Object[] arguments = joinPoint.getArgs();
+
+        logger.info("Method" + methodName + "with parameters" + Arrays.asList(arguments) + "will execute");
+        Object returnedMethod = joinPoint.proceed();
+        logger.info("Method executed and returned " + returnedMethod);
     }
 }
