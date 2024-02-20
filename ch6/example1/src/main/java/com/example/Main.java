@@ -1,11 +1,15 @@
 package com.example;
 
+import java.util.logging.Logger;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.example.models.Comment;
 import com.example.services.CommentService;
 
 public class Main {
+    private static Logger logger = Logger.getLogger(Main.class.getName());
+
     public static void main(String[] args) {
 
         var c = new AnnotationConfigApplicationContext(ProjectConfig.class);
@@ -16,7 +20,7 @@ public class Main {
         comment.setText("Demmo comment");
         comment.setAuthor("Natasha");
 
-        service.publishComment(comment);
-
+        String val = service.publishComment(comment);
+        logger.info(val);
     }
 }
