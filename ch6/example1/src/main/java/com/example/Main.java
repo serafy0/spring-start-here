@@ -20,7 +20,8 @@ public class Main {
         comment.setText("Demmo comment");
         comment.setAuthor("Natasha");
 
-        String val = service.publishComment(comment);
-        logger.info(val);
+        service.publishComment(comment);
+        service.editComment(comment);
+        service.deleteComment(comment);
     }
 }
