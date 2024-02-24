@@ -1,5 +1,10 @@
 package com.example.example.processors;
 
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
+
+@Component
+@RequestScope
 public class LoginProcessor {
     private String username;
     private String password;
