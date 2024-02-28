@@ -18,7 +18,7 @@ public class PurchaseRepo {
     }
 
     public void storePurchase(Purchase purchase) {
-        String sql = "INSERT INTO purchase (product, price) VALUES  (? , ?)";
+        String sql = "INSERT INTO purchase (product, price) VALUES  (?, ?)";
         jdbc.update(sql, purchase.getProduct(), purchase.getPrice());
     }
 
