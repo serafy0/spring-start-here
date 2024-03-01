@@ -6,9 +6,9 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.AccountRepository;
 import com.example.exceptions.AccountNotFoundException;
 import com.example.models.Account;
+import com.example.repositories.AccountRepository;
 
 @Service
 public class TransferService {
